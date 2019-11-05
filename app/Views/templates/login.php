@@ -16,7 +16,7 @@
                                 </div>
                             <?php endif; ?>
                             <div class="alert alert-success">
-                                   Lien github du projet <a class="btn btn-warning" href="https://github.com/aristidedovi/gestionrdv" target="_blank">VISITER</a>
+                                   Lien github du projet <a class="btn btn-warning" href="https://github.com/aristidedovi/quixlabrdv" target="_blank">VISITER</a>
                                 </div>
 
                             <form action="" method="post"  class="mt-5 mb-5 login-input">

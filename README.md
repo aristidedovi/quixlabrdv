@@ -22,11 +22,9 @@ Mettre a jour les informations de connexion à votre base de donnée dans le fic
             "db_name" => "rdv"
         );
 
-* Executer le fichier sql_new.sql dans votre serveur de base de donnée. le sql_test.sql est un 
-fichier sql de test.
+* Executer le fichier rdv.sql dans votre serveur de base de donnée.
 
-        *sql_new.sql
-        *sql_test.sql
+        *rdv.sql
 
 * L'identifiant de connexion de l'administrateur par defaut est 
     
