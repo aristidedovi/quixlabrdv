@@ -7,6 +7,7 @@
 //  }
 // var_dump($rdv);
 $array = json_encode($rendezvous);
+//var_dump($_SESSION);
 //echo $array;
 ?>
 <div class="row page-titles mx-0">
@@ -81,17 +82,63 @@ $array = json_encode($rendezvous);
                                         <div id="calendar"></div>
                                     </div>
                                 </div>
+                                <?php
+                                    if($_SESSION["id_type"] == 3){
+                                ?>
+                                    <?= $form->input('motif','',['type' => 'textarea'],true,true); ?>
+                                <?php
+                                    }else{
+                                ?>
                                 <?= $form->input('motif','Motif',['type' => 'textarea']); ?>
+                                <?php
+                                    }
+                                ?>
                             </div>
                             <div class="col-md-4">
 
+                            <?php 
+                                if($_SESSION["id_type"] == 3){
+                            ?>
+                             <?= $form->select('id_domaine','Spécialité concerner', $domaine,true,true); ?>
+                                <?= $form->input('heureRendezVous','Heure & Date du RDV',['type' => 'date'],true,false); ?>
+                                <?php  // echo $form->input('dateRendezVous','Date du RDV'); ?>
+                                <?= $form->input('nomComplet','Nom complet',[],true,true); ?>
+                                <?= $form->input('adresse','Adresse',[],true,true); ?>
+                                <?= $form->input('telephone','Telepehone',[],true,true); ?>
+                                <?php
+                                if($_GET['id'] != NULL){
+                                ?>
+                                    <?= $form->select('id_etat_rendez_vous','Etat RDV', $etat); ?>
+                                <?php
+                                }else{
+                                ?>
+                                    <?= $form->select('id_etat_rendez_vous','Etat RDV', $etat,false,true); ?>
+                                <?php
+                                }
+                                ?>
+                            <?php 
+                            }else{
+                            ?>
                                 <?= $form->select('id_domaine','Spécialité concerner', $domaine,true); ?>
                                 <?= $form->input('heureRendezVous','Heure & Date du RDV',['type' => 'date']); ?>
                                 <?php  // echo $form->input('dateRendezVous','Date du RDV'); ?>
                                 <?= $form->input('nomComplet','Nom complet'); ?>
                                 <?= $form->input('adresse','Adresse'); ?>
                                 <?= $form->input('telephone','Telepehone'); ?>
-                                <?= $form->select('id_etat_rendez_vous','Etat RDV', $etat); ?>
+                                <?php
+                                if($_GET['id'] != NULL){
+                                ?>
+                                    <?= $form->select('id_etat_rendez_vous','Etat RDV', $etat); ?>
+                                <?php
+                                }else{
+                                ?>
+                                    <?= $form->select('id_etat_rendez_vous','Etat RDV', $etat,false,true); ?>
+                                <?php
+                                }
+                                ?>
+                            <?php
+                                }
+                            ?>
                             </div>
                         </div>
                         <div class="col-md-12">

@@ -12,7 +12,7 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Les rendez-vous prises</h4>
+            <h4 class="card-title">Les rendez-vous prises <em class="alert alert-success" style="font-size: 10px;">Les rendez-vous dont leurs état est effecté</em></h4>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered zero-configuration">
                     <thead>
@@ -22,7 +22,6 @@
                         <th>Téléphone</th>
                         <th>Date & heure</th>
                         <th width="10%">domaine</th>
-                        <th>Etat</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -39,34 +38,17 @@
                                 <td><?= $rd->heureR?></td>
                                 <td><?= $rd->domaine ?></td>
                                 <td>
-                                    <?php
-                                    if($rd->id_etat_rendez_vous == 1){
-                                        ?>
-                                        <span class="badge badge-pill badge-success"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 2){
-                                        ?>
-                                        <span class="badge badge-pill badge-warning"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 3){
-                                        ?>
-                                        <span class="badge badge-pill badge-danger"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 4){
-                                        ?>
-                                        <span class="badge badge-pill badge-info"><?= $rd->etat?></span>
-                                        <?php
-                                    }
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                    <a href="?p=admin.rendezVous.edit&id=<?= $rd->id ; ?>" class="btn btn-default" 
+                                    style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" 
+                                    data-toggle="tooltip" data-placement="top" title="Reporter/Annuler">
                                         <i class="fa fa-pencil color-muted m-r-5"></i></a>
                                     <!--  <a style="margin-right: -20px;" href="?p=admin.rendezVous.detail&id=<?php // $rd->id ; ?>" style="width: 5px; margin-right: -20px; background-color: transparent; border: none;" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Affcher">
                                             <i class="fa fa-eye color-muted m-r-5"></i></a>-->
 
 
-                                    <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Detail">
+                                    <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" 
+                                    class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" 
+                                    data-toggle="tooltip" data-placement="top" title="Prendre en charge">
                                         <i class="fa fa-eye color-muted m-r-5"></i>
                                     </a>
 
@@ -75,7 +57,7 @@
                                         <button type="button" class="btn btn-default" data-container="body"
                                                 style="margin-left: -10px; margin-right: -20px; background-color: transparent; border: none;"
                                                 data-toggle="popover" data-placement="right"
-                                                data-content="Arrive bientôt.">
+                                                data-content="Arrive bientôt." disabled="disabled">
                                             <i class="fa fa-close color-danger"></i>
                                         </button>
                                         <!--  <button type="submit" style="width: 5px; margin-right: -20px; background-color: ;
@@ -94,29 +76,8 @@
                                 <td><?= $rd->heureR?></td>
                                 <td><?= $rd->domaine ?></td>
                                 <td>
-                                    <?php
-                                    if($rd->id_etat_rendez_vous == 1){
-                                        ?>
-                                        <span class="badge badge-pill badge-success"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 2){
-                                        ?>
-                                        <span class="badge badge-pill badge-warning"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 3){
-                                        ?>
-                                        <span class="badge badge-pill badge-danger"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 4){
-                                        ?>
-                                        <span class="badge badge-pill badge-info"><?= $rd->etat?></span>
-                                        <?php
-                                    }
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
-                                        <i class="fa fa-pencil color-muted m-r-5"></i></a>
+                                   <!-- <a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                        <i class="fa fa-pencil color-muted m-r-5"></i></a>-->
                                     <!--  <a style="margin-right: -20px;" href="?p=admin.rendezVous.detail&id=<?php // $rd->id ; ?>" style="width: 5px; margin-right: -20px; background-color: transparent; border: none;" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Affcher">
                                             <i class="fa fa-eye color-muted m-r-5"></i></a>-->
                                     <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Detail">
@@ -148,32 +109,11 @@
                                 <td><?= $rd->heureR?></td>
                                 <td><?= $rd->domaine ?></td>
                                 <td>
-                                    <?php
-                                    if($rd->id_etat_rendez_vous == 1){
-                                        ?>
-                                        <span class="badge badge-pill badge-success"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 2){
-                                        ?>
-                                        <span class="badge badge-pill badge-warning"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 3){
-                                        ?>
-                                        <span class="badge badge-pill badge-danger"><?= $rd->etat?></span>
-                                        <?php
-                                    }elseif ($rd->id_etat_rendez_vous == 4){
-                                        ?>
-                                        <span class="badge badge-pill badge-info"><?= $rd->etat?></span>
-                                        <?php
-                                    }
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
-                                        <i class="fa fa-pencil color-muted m-r-5"></i></a>
+                                    <!--<a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                        <i class="fa fa-pencil color-muted m-r-5"></i></a>-->
                                     <!--  <a style="margin-right: -20px;" href="?p=admin.rendezVous.detail&id=<?php // $rd->id ; ?>" style="width: 5px; margin-right: -20px; background-color: transparent; border: none;" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Affcher">
                                             <i class="fa fa-eye color-muted m-r-5"></i></a>-->
-                                    <a href="#" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                    <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
                                         <i class="fa fa-eye color-muted m-r-5"></i>
                                     </a>
 
@@ -203,7 +143,6 @@
                         <th>Telephone</th>
                         <th>Email</th>
                         <th>Type</th>
-                        <th>Domaine</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>

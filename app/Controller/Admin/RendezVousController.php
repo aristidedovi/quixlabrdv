@@ -120,6 +120,8 @@ class RendezVousController extends AppController {
         $errors = 0;
         if($_SESSION["id_type"] == 2 || $_SESSION["id_type"] == 1 || $_SESSION["id_type"] == 3 ){
                 if(!empty($_POST)){
+                    //var_dump($_POST);
+                   // die();
                     if(preg_match("#^[7][7806][0-9]{7}$#",$_POST['telephone']) === 1 &&
                         $_POST['nomComplet'] != '' && ctype_alpha(str_replace(' ','', $_POST['nomComplet'])) === true
                         && $_POST["motif"] != ''){
@@ -130,6 +132,7 @@ class RendezVousController extends AppController {
                         $newDate = date("Y-m-d", strtotime($dt));
                         // var_dump($newDateTime);
                         //var_dump($newDate);
+                       
                         $r = $this->RendezVous->findRendezVousByDateAndId($newDateTime,$_POST['id_domaine'],$_GET['id']);
 
                         if($r){
@@ -220,7 +223,7 @@ class RendezVousController extends AppController {
         $e = $this->RendezVous->findServiceEmployerByNumero($_SESSION["telephone"]);
         //var_dump($e);
        // die();
-        if($_SESSION["id_type"] == 2 || $_SESSION["id_type"] == 1){
+        if($_SESSION["id_type"] == 2 || $_SESSION["id_type"] == 1 || $_SESSION["id_type"] == 3){
             $this->render('admin.rendezVous.lister', compact('rendezvous','e'));
         }else{
             echo "pas access";

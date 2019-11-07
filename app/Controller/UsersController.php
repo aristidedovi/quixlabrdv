@@ -21,7 +21,7 @@ class UsersController extends AppController {
 
                 if($auth->login($_POST['username'], $_POST['password'])){
                     
-                    var_dump($_SESSION);
+                    //var_dump($_SESSION);
 
                     // Process your response here
                     //echo $response;

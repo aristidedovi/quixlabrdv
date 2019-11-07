@@ -14,10 +14,18 @@
                                 <div class="alert alert-danger">
                                     Indentifiant incorrect
                                 </div>
-                            <?php endif; ?>
-                            <div class="alert alert-success">
-                                   Lien github du projet <a class="btn btn-warning" href="https://github.com/aristidedovi/quixlabrdv" target="_blank">VISITER</a>
+                            <?php else: ?>
+                                <div class="alert alert-primary alert-dismissible fade show">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button> Lien du projet sur github
+                                    <strong>
+                                        <a href="https://github.com/aristidedovi/quixlabrdv" target="_blank" class="alert-link">cliquez-ici</a> 
+                                    </strong>    
                                 </div>
+                            <?php endif; ?>
+                           <!-- <div class="alert alert-success">
+                                   Lien github du projet <a class="btn btn-warning" href="https://github.com/aristidedovi/quixlabrdv" target="_blank">VISITER</a>
+                                </div>-->
 
                             <form action="" method="post"  class="mt-5 mb-5 login-input">
                                 <?= $form->input('username','Téléphone',[],true); ?>
@@ -31,9 +39,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 <!--**********************************
     Scripts

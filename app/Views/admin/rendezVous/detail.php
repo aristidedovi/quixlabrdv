@@ -32,14 +32,24 @@
                     </div>
 
                     <?php
-                    if($_SESSION['id_type'] == 2 || $_SESSION['id_type'] == 1 || $rendezvous->id_etat_rendez_vous == 4 ){
+                    if($_SESSION['id_type'] == 2 || $_SESSION['id_type'] == 1){
                     ?>
                         <div class="row mb-0">
                             <div class="col-md-12">
                                 <div class="card card-profile text-center">
-                                   <!-- <span class="mb-1 text-primary"><i class="icon-people"></i></span>-->
-                                     <h3 class="mb-0">Prise en charge par <?= $rendezvous->medecinNomComplet ?></h3>
-                                     <p class="text-muted px-4"><?=$rendezvous->priseEnCharge; ?></p>
+                                    <?php 
+                                        if($rendezvous->id_etat_rendez_vous == 4){
+                                    ?>
+                                        <!-- <span class="mb-1 text-primary"><i class="icon-people"></i></span>-->
+                                        <h3 class="mb-0 alert alert-success">Prise en charge par <?= $rendezvous->medecinNomComplet ?></h3>
+                                        <p class="text-muted px-4"><?=$rendezvous->priseEnCharge; ?></p>
+                                    <?php
+                                        }else{
+                                    ?>
+                                        <h3 class="mb-0 alert alert-danger">Prise en charge pas encore effectuer</h3>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
 

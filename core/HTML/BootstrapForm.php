@@ -19,25 +19,45 @@ class BootstrapForm extends Form {
      * @return string
      */
 
-    public function input($name,$label, $options = [],$hiddenLabel = true){
+    public function input($name,$label, $options = [],$hiddenLabel = true,$hidden = false){
         $type = isset($options['type']) ? $options['type'] : 'text';
         $l = $label;
-        if($type === 'textarea'){
-            $input = '<textarea rows="4" name="'.$name.'" class="form-control">'.$this->getValue($name).'</textarea>';
-        }elseif($type === 'date'){
-            $input = '<input type="text" name="'.$name.'" value="'.$this->getValue($name).'" placeholder="clicker pour selectionner la date et l\'heure" id="min-date" class="form-control" required>';
-        }elseif($type === 'password'){
-            $label = '';
-            $input = '<input type="'.$type.'" id = "password" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" data-toggle="password" required>';
-        }else{
-            if($hiddenLabel){
+        if($hidden === true){
+            if($type === 'textarea'){
+                $input = '<textarea rows="4" name="'.$name.'" class="form-control" style="display: none">'.$this->getValue($name).'</textarea>';
+            }elseif($type === 'date'){
+                $input = '<input type="text" name="'.$name.'" value="'.$this->getValue($name).'" placeholder="clicker pour selectionner la date et l\'heure" id="min-date" class="form-control" style="display: none" required>';
+            }elseif($type === 'password'){
                 $label = '';
-                $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" required>';
+                $input = '<input type="'.$type.'" id = "password" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" data-toggle="password" style="display: none" required>';
             }else{
-                $label = '<label>'.$label.'</label>';
-                $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" required>';
+                if($hiddenLabel){
+                    $label = '';
+                    $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" style="display: none" required>';
+                }else{
+                    $label = '<label>'.$label.'</label>';
+                    $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" style="display: none" required>';
+                }
+            }
+        }else{
+            if($type === 'textarea'){
+                $input = '<textarea rows="4" name="'.$name.'" class="form-control">'.$this->getValue($name).'</textarea>';
+            }elseif($type === 'date'){
+                $input = '<input type="text" name="'.$name.'" value="'.$this->getValue($name).'" placeholder="clicker pour selectionner la date et l\'heure" id="min-date" class="form-control" required>';
+            }elseif($type === 'password'){
+                $label = '';
+                $input = '<input type="'.$type.'" id = "password" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" data-toggle="password" required>';
+            }else{
+                if($hiddenLabel){
+                    $label = '';
+                    $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" placeholder="Votre '.$l.'" required>';
+                }else{
+                    $label = '<label>'.$label.'</label>';
+                    $input = '<input type="'.$type.'" name="'.$name.'" value="'.$this->getValue($name).'" class="form-control" required>';
+                }
             }
         }
+
         return $this->surround($label.$input);
     }
 

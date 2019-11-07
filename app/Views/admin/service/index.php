@@ -20,7 +20,11 @@
                         <a href="?p=admin.categories.edit&id=<?= $category->id; ?>" class="btn btn-primary">Editer</a>
                         <form action="?p=admin.categories.delete" method="post" style="display: inline">
                             <input type="hidden" name="id" value="<?= $category->id ?>">
-                            <button type="submit" class="btn btn-danger" >Supprimer</button>
+                            <button type="submit" class="btn btn-danger" 
+                            data-toggle="tooltip" 
+                                    data-placement="top" title="Supprimer"
+                                    data-toggle="popover" data-placement="right"
+                                    data-content="Arrive bientôt.">Supprimer</button>
                         </form>
                     </td>
                 </tr>
