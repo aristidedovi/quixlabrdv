@@ -5,6 +5,21 @@
     <div class="nk-nav-scroll">
         <ul class="metismenu" id="menu">
             <li class="nav-label">Tableau de bord</li>
+            <li class="nav-label">
+            <span style="text-transform: uppercase; font-size: small;"><?= $_SESSION['nomComplet']; ?></span>
+            <span style="text-transform: uppercase; font-size: small;"> &nbsp;<?= $_SESSION['type']; ?></span>
+            <em>
+                (<?php
+                if($_SESSION['id_type'] == 3){
+                    echo $_SESSION['domaine'];
+                }elseif ($_SESSION['id_type'] == 2){
+                    echo $e->service;
+                }elseif ($_SESSION['id_type'] == 1){
+                    echo "Administrateur";
+                }
+                ?>)
+            </em>
+            </li>
             <?php if($_SESSION["id_type"] == 1){?>
                 <li>
                     <a href="index.php?p=admin.employer.index" aria-expanded="false">

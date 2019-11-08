@@ -23,19 +23,7 @@
                 <?php  setlocale(LC_ALL, 'fr_FR');  ?>
                 <div class="input-group-prepend">
                     <div class="input-group-text bg-transparent border-0 pr-2 pr-sm-3">
-                        <span style="text-transform: uppercase; font-size: large;"><?= $_SESSION['nomComplet']; ?></span>
-                        <span style="text-transform: uppercase; font-size: large;"> &nbsp;<?= $_SESSION['type']; ?></span>
-                        <em>
-                            (<?php
-                            if($_SESSION['id_type'] == 3){
-                                echo $_SESSION['domaine'];
-                            }elseif ($_SESSION['id_type'] == 2){
-                                echo $e->service;
-                            }elseif ($_SESSION['id_type'] == 1){
-                                echo "Administrateur";
-                            }
-                            ?>)
-                        </em>
+                       
                         <?php //  date("D, j F Y");?> </div>
                 </div>
                 <div class="input-group-prepend">

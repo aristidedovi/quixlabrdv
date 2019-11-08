@@ -22,7 +22,8 @@
             <div class="card">
                 <div class="card-body">
                     <div class="media align-items-center mb-4">
-                       <!-- <img class="mr-3" src="images/avatar/11.png" width="80" height="80" alt="">-->
+
+                       <img class="mr-3" src="images/avatar/v.png" width="80" height="80" alt="">
                         <div class="media-body">
                             <h3 class="mb-1"><?= $rendezvous->nomComplet; ?> <em><?= $rendezvous->heureRendezVous; ?></em></h3>
                             <p class="text-muted mb-1">Telepone: <?= $rendezvous->telephone ?></p>

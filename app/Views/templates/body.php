@@ -74,7 +74,10 @@
 <script src="./js/gleek.js"></script>
 <script src="./js/styleSwitcher.js"></script>
 
-
+<script src="./plugins/moment/moment.min.js"></script>
+<script src="./plugins/jqueryui/js/jquery-ui.min.js"></script>
+<script src="./plugins/fullcalendar/js/fullcalendar.min.js"></script>
+<script src="./js/plugins-init/fullcalendar-init.js"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -97,7 +100,6 @@
 <script src="./plugins/raphael/raphael.min.js"></script>
 <script src="./plugins/morris/morris.min.js"></script>
 <!-- Pignose Calender -->
-<script src="./plugins/moment/moment.min.js"></script>
 <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
 <!-- ChartistJS -->
 <script src="./plugins/chartist/js/chartist.min.js"></script>
@@ -111,9 +113,7 @@
 
 
 
-<script src="./plugins/jqueryui/js/jquery-ui.min.js"></script>
-<script src="./plugins/fullcalendar/js/fullcalendar.min.js"></script>
-<script src="./js/plugins-init/fullcalendar-init.js"></script>
+
 
 
 <script src="./plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>

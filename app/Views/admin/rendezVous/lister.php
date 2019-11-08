@@ -118,12 +118,16 @@
                                 ?>
                             </td>
                             <td>
-                                <a href="?p=admin.rendezVous.edit&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                <a href="?p=admin.rendezVous.edit&id=<?= $rd->id ; ?>" class="btn btn-default" 
+                                style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" 
+                                data-toggle="tooltip" data-placement="top" title="Modifier">
                                     <i class="fa fa-pencil color-muted m-r-5"></i></a>
                                 <!--  <a style="margin-right: -20px;" href="?p=admin.rendezVous.detail&id=<?php // $rd->id ; ?>" style="width: 5px; margin-right: -20px; background-color: transparent; border: none;" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Affcher">
                                             <i class="fa fa-eye color-muted m-r-5"></i></a>-->
 
-                                <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" 
+                                style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" 
+                                data-toggle="tooltip" data-placement="top" title="Detail">
                                     <i class="fa fa-eye color-muted m-r-5"></i>
                                 </a>
 
@@ -180,7 +184,9 @@
                                             <i class="fa fa-eye color-muted m-r-5"></i></a>-->
 
 
-                                <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" data-toggle="tooltip" data-placement="top" title="Modifier">
+                                <a href="?p=admin.rendezVous.detail&id=<?= $rd->id ; ?>" class="btn btn-default" 
+                                style="width: 5px; margin-left: -10px; background-color: transparent; border: none;" 
+                                data-toggle="tooltip" data-placement="top" title="Detail">
                                     <i class="fa fa-eye color-muted m-r-5"></i>
                                 </a>
 

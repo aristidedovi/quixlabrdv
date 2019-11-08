@@ -56,6 +56,7 @@
 
                   for(var i = 0; i < rdvC.length; i++){
                       var objCalendrier = new Object();
+                      objCalendrier.id = rdvC[i].id;
                       objCalendrier.title = rdvC[i].nomComplet;
 
                       var datereel = new Date(rdvC[i].heureR);
